@@ -99,10 +99,12 @@ public abstract class SASTMojo extends AppScanMojo {
 				m_irx = new File(irxFile, getDefaultScanName());
 				getProgress().setStatus(new Message(Message.INFO, Messages.getMessage("scan.file.is.directory",  irxFile, m_irx))); //$NON-NLS-1$
 			}	
+			/*
 			else if(irxFile.getParentFile() == null || !irxFile.getParentFile().exists()) {
 				m_irx = new File(m_targetDir, getDefaultScanName());
 				getProgress().setStatus(new Message(Message.INFO, Messages.getMessage("scan.file.invalid", m_output, m_irx))); //$NON-NLS-1$
 			}
+			*/
 			else {
 				//ensure .irx extension
 				String name = irxFile.getName();

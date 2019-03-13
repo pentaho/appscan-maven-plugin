@@ -30,7 +30,7 @@ public final class GenerateIRMojo extends SASTMojo {
 			getProgress().setStatus(new Message(Message.INFO, Messages.getMessage("ir.gen.success", getIrx()))); //$NON-NLS-1$
 		} catch (AppScanException  e) {
 			getProgress().setStatus(e);
-			throw new MojoExecutionException(Messages.getMessage("ir.gen.failed", e.getLocalizedMessage())); //$NON-NLS-1$
+			//throw new MojoExecutionException(Messages.getMessage("ir.gen.failed", e.getLocalizedMessage())); //$NON-NLS-1$
 		}
 	}
 }
