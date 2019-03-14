@@ -5,7 +5,7 @@
 	<groupId>com.ibm.security</groupId>
 	<artifactId>appscan-maven-plugin</artifactId>
 	<packaging>maven-plugin</packaging>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.0.1.hvpatch</version>
 	
 	<name>IBM Application Security on Cloud Maven Plugin</name>
 	<description>Generate an IRX file for use with IBM Application Security on Cloud</description>
@@ -24,6 +24,13 @@
 			<email>matthew.murphy@hcl.com</email>
 		</developer>
 	</developers>
+	
+	<properties>
+    <pentaho.private.release.repo>http://nexus.pentaho.org/content/repositories/private-release/</pentaho.private.release.repo>
+    <pentaho.private.snapshot.repo>http://nexus.pentaho.org/content/repositories/private-snapshot/</pentaho.private.snapshot.repo>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
 	<build>
 		<plugins>
@@ -154,21 +161,23 @@
   		</profile>
   	</profiles>
 
-	<distributionManagement>
-		<snapshotRepository>
-    			<id>ossrh</id>
-    			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-  		</snapshotRepository>
-  		<repository>
-    			<id>ossrh</id>
-    			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-  		</repository>
-	</distributionManagement>
+  <distributionManagement>
+    <repository>
+      <id>pentaho.private.release.repo</id>
+      <name>Pentaho Private Release Repository</name>
+      <url>${pentaho.private.release.repo}</url>
+    </repository>
+    <snapshotRepository>
+      <id>pentaho.private.snapshot.repo</id>
+      <name>Pentaho Private Snapshot Repository</name>
+      <url>${pentaho.private.snapshot.repo}</url>
+    </snapshotRepository>
+  </distributionManagement>
   
-  	<scm>
-  		<connection>scm:git:ssh://github.com/hclproducts/appscan-maven-plugin.git</connection>
-  		<developerConnection>scm:git:ssh://git@github.com/hclproducts/appscan-maven-plugin.git</developerConnection>
-  		<url>https://github.com/hclproducts/appscan-maven-plugin</url>
+  <scm>
+  		<connection>scm:git:ssh://github.com/pentaho/appscan-maven-plugin.git</connection>
+  		<developerConnection>scm:git:ssh://git@github.com/pentaho/appscan-maven-plugin.git</developerConnection>
+  		<url>https://github.com/pentaho/appscan-maven-plugin</url>
   	  <tag>HEAD</tag>
   </scm>
 
