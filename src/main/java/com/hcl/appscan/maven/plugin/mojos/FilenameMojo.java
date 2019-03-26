@@ -45,6 +45,7 @@ public class FilenameMojo extends AppScanMojo {
     String dirName = dir.getName();
     // SAClientUtils doesn't like the '~' char we use for branch designation in pipelines so change it to '.'
     dirName = dirName.replace( "~", "." );
+    dirName = dirName.replace( "@", "." );
     dirs.add( dirName );
     return dirs;
   }
